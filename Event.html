@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Learning</title>
+</head>
+<body>
+    <!-- <img src="./parachinar.jpg" alt="Parachinar" width="300px" height="250px" id="pic1"> -->
+    <!-- <img src="./parachinar.jpg" alt="Parachinar" width="300px" height="250px"> -->
+    <!-- <img src="./parachinar.jpg" alt="Parachinar" width="300px" height="250px"> -->
+    <!-- <img src="./parachinar.jpg" alt="Parachinar" width="300px" height="250px"> -->
+
+
+    <!-- <div class="main">
+        <img src="./parachinar.jpg" alt="no image" width="300px"><br/>
+        <img src="./parachinar.jpg" alt="no image" width="300px"><br/>
+        <img src="./parachinar.jpg" alt="no image" width="300px"><br/>
+        <img src="./parachinar.jpg" alt="no image" width="300px" id="last-pic"><br/>
+    </div> -->
+
+    <a href="http://google.com" id="gog">Googli</a>
+
+</body>
+<script>
+    //document.querySelector("#pic1").onclick=function(){
+    //    alert("hello")
+    //}//can also be document.getElementbyId
+    //creating callback function (baynaam function)
+    //scalable good tarika 
+    //.onclick=alert("hello") not good tarika
+    //document.querySelector("#pic1").addEventListener("click",(()=>{
+      //  confirm("DO Confrim this")
+    //}),false)
+//document.querySelector("#pic1").addEventListener("dblclick",(()=>{
+  //  alert("SALAM")
+//}),false)
+
+//document.querySelector("#pic1").addEventListener("mouseover",(()=>{
+//alert("SALAM")
+//}),false) // there is mouseout also etc 
+
+
+//now block the google
+//document.querySelector("#gog").addEventListener("click",((i)=>{//i means whole object or all objects
+ //   i.preventDefault()//stopping use to access the id/class
+   // }),true)
+    
+
+
+
+
+
+
+//bubbling
+//document.querySelector(".main").addEventListener("click",((i)=>{
+  //  console.log("parent is executed")
+    //}),false)
+    
+//document.querySelector("#last-pic").addEventListener("click",((i)=>{
+//console.log("child is executed")
+//}),false)
+
+//capturing
+
+
+//document.querySelector(".main").addEventListener("click",((i)=>{
+//console.log("parent is executed")
+//}),true)
+    
+//document.querySelector("#last-pic").addEventListener("click",((i)=>{
+//console.log("child is executed")
+//}),true)
+//yeh true false ki kahani ya inko change krna hi propagation
+//propagation means how event passed to the DOM
+//parent-child relation
+//CAP first parent then child if true
+
+
+
+
+//we can stop this propagation
+
+//document.querySelector(".main").addEventListener("click",((i)=>{
+//console.log("parent is executed")
+//}),false)
+    
+//document.querySelector("#last-pic").addEventListener("click",((i)=>{
+//console.log("child is executed")
+//i.stopPropagation()
+//here propagation stops
+//only child do works
+//works on false only means bubbling
+//market me yehi use hoti kue k we can stop its propagation
+//it also use to block web-site
+//}),false)
+
+
+</script>
+</html>

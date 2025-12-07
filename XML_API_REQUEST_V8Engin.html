@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  id='b1' style="background-color: #212121;color:aliceblue">
+    <!-- <img src="https://avatars.githubusercontent.com/u/144939427?v=4" alt=""> -->
+<button id="but1">
+    click me
+</button>
+<div class="parent">
+</div>
+
+</body>
+<script>
+    const requestURL="https://api.github.com/users/Ahmed-129"
+    const xhr=new XMLHttpRequest()//creating the new object of the class XML request
+    xhr.open('GET',requestURL)//sending the GET request to the provided URL
+    //console.log("We r here")
+    
+    //our status value changes
+    //console.log(xhr.readyState)//1  there are 4 readyStates 0 to 4
+
+    xhr.onreadystatechange=function(){
+       // onreadystatechange()needs function cuz jab state change honi hai to tell me k mein kia kro tab is liye isko function dyna parta
+       console.log(xhr.readyState)// 2 3 4 cuz 0 tb hai jb khuch bhi ni kia aur 1 open() k bad wali state hai
+       // 2 3 4 kaisay aya yeh to loop ni hai wo is trhn k XML request Asynchronous programing py built hai function execute asynchronously
+       //jaisay jaisy state change hwyi waisy waisy tab tab function call hoga web api me jaye gha register call back register kry gha then usko task queue me dal k wapis call stack me jaye gha aur wahan sy execute hojay gha function
+       //asyn cuz bar bar bataya ja rha humay k kam is done so wapis call stack py lago new kam hai usko as function ka bar bar call hona is a kam again n again
+
+       //now detect the state and do some work
+       if(xhr.readyState===4){
+        //abb jo return ata hai humay after making the successfull api request
+        console.log(this.responseText)// ab responseText koi variable to banaya ni gya so use this.response jo us current context ka response dy gha humay
+        //abb inspect kr k web k console me humaray pass pura api sy aya hwya response yani data show ho jay gha in JSON format
+        //const DataResponse=this.responseText
+        //console.log(DataResponse.public_repos)//undefined cuz typeof response from api's URL is usually in string format
+        //console.log(typeof DataResponse)// data is in string mostly 
+
+        //so convert the responed data type into JSON-object type from string 
+        const DataResponse=JSON.parse(this.responseText)// conversion from string to JSON-object
+        console.log(typeof DataResponse)//object
+        //now access the data using the dot operator
+        console.log(DataResponse.name)
+        console.log(DataResponse.avatar_url)
+
+        document.querySelector('#but1').addEventListener('click',(()=>{
+            const name=document.createElement('h1')
+            name.appendChild(document.createTextNode(DataResponse.name))
+            document.querySelector('.parent').appendChild(name)
+        }))
+       }
+
+
+    } //use to change the states from 0(unsent) to 4(done)
+
+
+
+    xhr.send()//send() sends this request 
+</script>
+</html>

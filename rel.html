@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+   .aa{
+    background-color: #212121;
+    color:#fff
+
+   }
+    </style>
+</head>
+<body class="aa">
+    <div class="parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+    </div>
+    <script>
+       // let a=document.querySelector(".parent")
+        //console.log(a)
+        //console.log(a.children)
+        //console.log(a.children[1])
+        //console.log(a.children[1].innerHTML="Friday")
+        //console.log(a.children[1].style.color="red")
+        ///console.log(a.children[1].style.backgroundColor="grey")
+        //let c=[...a.children]
+        //console.log(c)
+        //c.map((i)=>{
+        //    i.style.color="aqua"
+
+        //})
+        //console.log(a.firstElementChild)
+        //console.log(a.lastElementChild) 
+
+
+
+        //accessing parent from child
+        let child=document.querySelector(".days")
+        //accessing child from parent
+        let aa=document.querySelector(".parent")
+        console.log(child)
+        console.log(child.parentElement)
+        console.log(child.nextElementSibling)
+        console.log(aa.childNodes)//NodeList
+        
+    </script>
+    
+</body>
+</html>

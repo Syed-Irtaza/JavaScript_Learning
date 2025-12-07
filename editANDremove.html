@@ -1,0 +1,43 @@
+<!-- Edit remove and elements in DOM -->
+ <!-- <!DOCTYPE html> -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DOM Learning</title>
+ </head>
+ <body>
+   <div class="language">
+   </div>
+   <script>
+       
+   //    add
+       function optimize(i){
+           const a=document.createElement("li")
+           a.appendChild(document.createTextNode(i))
+           document.querySelector('.language').appendChild(a)
+
+       }
+       optimize("Javascript")
+       optimize("Typescript")
+       optimize("c++")
+       optimize("Python")
+       optimize("SWIFT")
+       // update
+       let a=document.querySelector("li:nth-child(1)")
+       // a.innerHTML="head" //purana tareka
+       //new tarika
+       let b=document.createTextNode("Hello")
+       a.replaceWith(b)
+
+       // remove
+       let aa=document.querySelector("li:nth-child(3)")
+       a.remove()
+
+
+
+   </script>
+   
+ </body>
+  </html>

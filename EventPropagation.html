@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+</head>
+<body>
+    <div class="parent">
+        <h1>Parent</h1>
+        <div class="child">
+            <h2>Child</h2>
+        </div>
+    </div>
+    <a href="http://google.com" id="googli">goole</a>
+</body>
+<script>
+    //bubbling
+    ///document.querySelector('.parent').addEventListener('click',(()=>{
+     //   console.log("Parent")
+    //}),false)
+    //document.querySelector('.child').addEventListener('click',(()=>{
+      //  console.log("Child")
+    //}),false)
+    //works with false and without false
+
+    //capturing
+
+    //document.querySelector('.parent').addEventListener('click',(()=>{
+      //  console.log("Parent")
+    //}),true)
+    //document.querySelector('.child').addEventListener('click',(()=>{
+    //    console.log("Child")
+    // }),true)
+
+   // document.querySelector('.parent').addEventListener('click',(()=>{
+     //   console.log("Parent")
+    //}),false)
+    //document.querySelector('.child').addEventListener('click',((i)=>{
+      //  console.log("Child")
+       // i.stopPropagation()//stops the propagation
+    //}),false)
+
+    //document.querySelector('.parent').addEventListener('click',(()=>{
+    //    console.log("Parent")
+    //}),true)
+    //document.querySelector('.child').addEventListener('click',((i)=>{
+      //  console.log("Child")
+       // i.stopPropagation()//stops the propagation doesn't support in capturing 'true'
+    //}),true)
+
+    // block the link to open
+   // document.getElementById("googli").addEventListener('click',((i)=>{
+     //   i.preventDefault();
+      //  console.log("google is clicked");
+    //}),false)
+</script>
+</html>

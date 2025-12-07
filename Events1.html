@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141
+;color:aliceblue">
+
+    <!-- non scalable and bad tarika to add events -->
+    <!-- <img src="./parachinar.jpg" alt="parachinar" onclick="alert('hello')"> -->
+     <img src="./parachinar.jpg" alt="parachinar" id="pic-1"> 
+     <!-- don't add # in id and . in class -->
+</body>
+<script>
+    //it don't give more options and features
+    //document.getElementById("pic-1").onclick=function(){
+      //  alert("hello again")
+    //}
+    //bestest method
+    //document.getElementById("pic-1").addEventListener('click',(()=>{
+    //    alert("hello again and again")
+    //}))
+    //  OR with query selector
+    //document.querySelector('#pic-1').addEventListener('click',(()=>{
+    //    alert("hello 300 times")
+    //}),false)//be default false so likho ya na likho true likhna parta but
+
+    document.querySelector('#pic-1').addEventListener('click',((i)=>{
+        console.log(i)//i - is an event object
+    }),false)
+
+    // IMPORTANT---EVENTS
+    //type(mouse,keyboard events),timestamp,dafaultPrevented,target,tooElement,srcElement,CurrentTarget,clientx,clientY,screenX,screenY,tilt,altkey,ctrlkey,shiftkey,keycode
+</script>
+</html>

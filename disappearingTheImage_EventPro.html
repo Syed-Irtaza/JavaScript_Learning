@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Removing The Image Event</title>
+</head>
+<body>
+    <ul id="pics">
+    <li><img src="./parachinar.jpg" alt="parachinar" width="500px" id="pic1"></li>
+    <li><img src="./parachinar.jpg" alt="parachinar" width="500px" id="pic2"></li>
+    <li><img src="./parachinar.jpg" alt="parachinar" width="500px" id="pic3"></li>
+</ul>
+</body>
+<script>
+    document.querySelector("#pics").addEventListener('click',((i)=>{
+        //console.log(i)//showing all possible pointer(mouse) events of the event object that can be listened(track)
+        //console.log(i.target)//show the targeted class's or id's element(which target id or class sy yeh event occur ho rha)
+        //console.log(i.target.parentNode)//give the parent element of that element which is inside the parent element img tag k parent tag yani li ko show karaya jaye gha
+        //removing the element(object)
+        //let remIt=i.target.parentNode
+        //remIt.remove()
+        //another tarika
+        // remIt.parentNode.removeChild(remIt)//we cannot apply removeChild to remIt cuz wo li me us k child yani image ko remove kr dy gha(simple error throw kry gha) is liye one step aur back jaye ghy aur ul ko access krny ka baad us ka child yani li ko remove kr dyn ghy
+        // if we click on image to wo tou delete hojay ghi
+        //but if clicked on list item means on bullets
+        //then whole screen will be blankout
+        //because list item ka parent ul hai unordered list 
+        //so puri ki puri unordered list ur jaye ghi
+
+        //so we will remove the img with its parent li not li with its parent ul
+        //console.log(i.target.tagName)//jahan pay click kro gha uska tagName bataye gha mere ko
+        //so jahan , jahan py tagName IMG hai us k parent li ko ura do ta k puri list item jis me img hai wo ur jaye 
+        // na k li aur uska parent jo puri ul hi ura dy ghi
+        
+        if(i.target.tagName==='IMG'){
+            let rm=i.target.parentNode
+            rm.remove()
+        }
+
+
+
+    }))
+</script>
+</html>
